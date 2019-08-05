@@ -1,0 +1,35 @@
+<?php
+/**
+ * @var $this Orba_Payuplpro_Block_Info
+ */
+$session = Mage::getSingleton('admin/session');
+$isAllowed = $session->isAllowed('sales/payuplpro');
+?>
+<table class="form-list">
+    <tr>
+        <td class="label"><?php echo $this->__('Method'); ?>:</td>
+        <td class="value"><strong><?php echo $this->htmlEscape($this->getMethod()->getTitle()); ?></strong></td>
+    </tr>
+<?php if ($_specificInfo = $this->getSpecificInformation()):?>
+<?php foreach ($_specificInfo as $_label => $_value):?>
+    <tr>
+        <td class="label"><?php echo $this->escapeHtml($_label)?>:</td>
+        <td class="value"><strong><?php echo nl2br(implode($this->getValueAsArray($_value, true), "\n"))?></strong></td>
+    </tr>
+<?php endforeach; ?>
+<?php endif;?>
+</table>
+<br />
+<?php if ($this->canBePaidOutside()): ?>
+    <?php if ($isAllowed): ?>
+    <a href="<?php echo $this->getOutsideUrl(); ?>"><?php echo $this->__('Click here if the transaction was completed outside Payu'); ?></a><br />
+    (<?php echo $this->__('It will cancel the transaction in Payu'); ?>)<br /><br />
+    <?php endif; ?>
+<?php elseif ($this->isPaidOutside()): ?>
+    <strong><?php echo $this->__('The transaction was completed outside Payu.'); ?><br /><br /></strong>
+<?php elseif ($this->isCompletedButBlocked()): ?>
+    <?php if ($isAllowed): ?>
+    <a href="<?php echo $this->getUnblockUrl(); ?>"><?php echo $this->__('Click here to unblock the order'); ?></a><br /><br />
+    <?php endif; ?>
+<?php endif; ?>
+<?php echo $this->getChildHtml()?>

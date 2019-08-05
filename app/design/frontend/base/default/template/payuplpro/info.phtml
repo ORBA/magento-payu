@@ -1,0 +1,21 @@
+<?php /** @var Orba_Payuplpro_Block_Info $this */ ?>
+<table id="payuplpro-info" class="form-list">
+    <tr>
+        <td class="label"><?php echo $this->__('Method'); ?>:</td>
+        <td class="value"><strong><?php echo $this->htmlEscape($this->getMethod()->getTitle()); ?></strong></td>
+    </tr>
+<?php if ($_specificInfo = $this->getSpecificInformation()):?>
+<?php foreach ($_specificInfo as $_label => $_value):?>
+    <tr>
+        <td class="label"><?php echo $this->escapeHtml($_label)?>:</td>
+        <td class="value"><strong><?php echo nl2br(implode($this->getValueAsArray($_value, true), "\n"))?></strong></td>
+    </tr>
+<?php endforeach; ?>
+<?php endif;?>
+</table>
+<?php if ($this->isPaidOutside()): ?>
+<strong><?php echo $this->__('The transaction was completed outside Payu.'); ?><br /><br /></strong>
+<?php endif; ?>
+<?php if ($payment_url = $this->getPaymentUrl()): ?>
+<a href="<?php echo $payment_url; ?>"><?php echo $this->__('Click here to pay'); ?></a>
+<?php endif; ?>

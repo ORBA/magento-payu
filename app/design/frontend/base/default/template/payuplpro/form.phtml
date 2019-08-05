@@ -1,0 +1,34 @@
+<?php
+$after_checkout = true;
+if (!$this->choosePaymentMethodAfterCheckout()) {
+    $payment_types = $this->getPaymentTypes();
+    if (!empty($payment_types)) {
+        $after_checkout = false;
+        $checked_method = $this->getCheckedPaymentType();
+    }
+}
+?>
+<ul class="form-list" id="payment_form_<?php echo $this->getMethodCode() ?>" style="display: none;">
+    <?php if ($after_checkout): ?>
+    <li class="form-alt"><?php echo Mage::helper('payuplpro')->__('You will be redirected to the Payu.pl application after submitting the order.'); ?></li>
+    <?php else: ?>
+    <li class="form-alt"><?php echo Mage::helper('payuplpro')->__('Choose a payment type. You will be redirected to the chosen payment type application after submitting the order.'); ?></li>
+    <?php foreach ($payment_types as $container): ?>
+    <?php if (!empty($container['items'])): ?>
+    <li>
+        <strong><?php echo $container['label']; ?></strong>
+        <ul>
+            <?php foreach ($container['items'] as $payment_type): ?>
+            <li>
+                <div class="input-box">
+                    <input <?php if ($payment_type['type'] == $checked_method): ?>checked="checked" <?php endif; ?>type="radio" name="payment[additional_information][payuplpro_paytype]" id="payuplpro_paytype_<?php echo $payment_type['type']; ?>" value="<?php echo $payment_type['type']; ?>" />
+                </div>
+                <label for="payuplpro_paytype_<?php echo $payment_type['type']; ?>"><img src="<?php echo $payment_type['img']; ?>" title="<?php echo $payment_type['name']; ?>" alt="" /></label>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </li>
+    <?php endif; ?>
+    <?php endforeach; ?>
+    <?php endif; ?>
+</ul>

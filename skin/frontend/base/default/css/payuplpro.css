@@ -1,0 +1,42 @@
+#payment_form_payuplpro {
+    overflow: hidden;
+}
+#payment_form_payuplpro > li {
+    padding-top: 8px;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+#payment_form_payuplpro > li.form-alt {
+    margin-top: 0;
+    padding-bottom: 8px;
+}
+#payment_form_payuplpro > li > ul > li {
+    display: block;
+    width: 100px;
+    height: 40px;
+    float: left;
+    margin: 0;
+}
+#payment_form_payuplpro .input-box {
+    width: 18px;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+}
+#payment_form_payuplpro label {
+    width: 64px;
+    float: left;
+}
+#payment_form_payuplpro label img {
+    width: 64px;
+    display: block;
+}
+#payuplpro-info {
+    margin-bottom: 10px;
+}
+#payuplpro-info td {
+    padding-right: 10px;
+}
+#dt_method_payuplpro img {
+    margin-right: 10px;
+}

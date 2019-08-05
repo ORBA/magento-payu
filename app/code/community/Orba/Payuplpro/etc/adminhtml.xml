@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <sales>
+                        <children>
+                            <payuplpro translate="title" module="payuplpro">
+                                <title>ORBA | Payu.pl Pro</title>
+                                <sort_order>1000</sort_order>
+                            </payuplpro>
+                        </children>
+                    </sales>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

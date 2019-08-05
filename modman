@@ -1,0 +1,9 @@
+app/code/community/Orba/Payuplpro/                          app/code/community/Orba/Payuplpro
+app/design/frontend/base/default/template/payuplpro/        app/design/frontend/base/default/template/payuplpro
+app/design/adminhtml/default/default/template/payuplpro/    app/design/adminhtml/default/default/template/payuplpro
+app/design/frontend/base/default/layout/payuplpro.xml       app/design/frontend/base/default/layout/payuplpro.xml
+app/etc/modules/Orba_Payuplpro.xml                          app/etc/modules/Orba_Payuplpro.xml
+app/locale/pl_PL/Orba_Payuplpro.csv                         app/locale/pl_PL/Orba_Payuplpro.csv
+shell/orba_payuplpro.php                                    shell/orba_payuplpro.php
+skin/frontend/base/default/css/payuplpro.css                skin/frontend/base/default/css/payuplpro.css
+skin/frontend/base/default/images/payuplpro/                skin/frontend/base/default/images/payuplpro

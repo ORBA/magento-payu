@@ -1,0 +1,13 @@
+{
+  "name": "orba/magento-payu",
+  "description": "Payu.pl extended integration for Magento 1",
+  "type": "magento-module",
+  "version": "1.2.0",
+  "authors": [
+    {
+      "name": "Orba Sp. z o.o.",
+      "homepage": "http://orba.pl/"
+    }
+  ],
+  "license": "GPL-3.0-or-later"
+}
