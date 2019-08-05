@@ -1,7 +1,7 @@
 # magento-payu
 Magento 1 module for Payu.pl payments processor integration.
 
-Features:
+### Features:
 * Add a new payment method to store. Payment is processed by Payu.pl (former Platnosci.pl)
 * Allows to configure different payment gates for each store view
 * Allows to retry unfinished payment (e.g. cancelled payment, closed browser, insufficent funds, various Payu.pl errors)
@@ -11,7 +11,7 @@ Features:
 * Allows to manually confirm payments (e.g. when payment was finished using different channel)
 * Allows to set Your own order statuses for payments statuses (initialized, finished, on error)
 
-##Configuration and testing:
+### Configuration and testing:
 
 > Remember that Payu.pl doesn't support SANDBOX accounts. For testing payments You need to set this up in Payu.pl payments settings in payu.pl administration panel.
 
