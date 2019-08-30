@@ -9,5 +9,8 @@
       "homepage": "http://orba.pl/"
     }
   ],
-  "license": "GPL-3.0-or-later"
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ]
 }
