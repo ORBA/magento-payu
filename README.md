@@ -1,3 +1,5 @@
+This project is ABANDONED
+
 # magento-payu
 Magento 1 module for Payu.pl payments processor integration.
 
